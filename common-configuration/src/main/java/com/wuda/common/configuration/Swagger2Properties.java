@@ -2,22 +2,23 @@ package com.wuda.common.configuration;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 /**
- * 核心配置内容.
+ * swagger2 属性信息.
  *
  * @author wuda
  */
 @Getter
 @Setter
+@ToString
 @Component
-@ConfigurationProperties(prefix = "core")
-public class CoreProperty {
+@ConfigurationProperties(prefix = "swagger2")
+public class Swagger2Properties {
 
-    /**
-     * the copyright.
-     */
-    private String copyright;
+    private String basePackage;
+    private String title;
+    private String description;
 }
