@@ -1,4 +1,4 @@
-package com.wuda.admin.db.model;
+package com.wuda.admin.db.datasource;
 
 import com.wuda.common.lang.util.SpringApplicationContextUtil;
 import org.springframework.beans.factory.annotation.Autowired;

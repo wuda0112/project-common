@@ -1,7 +1,8 @@
-package com.wuda.admin.db.model;
+package com.wuda.admin.db.datasource;
 
 import com.wuda.admin.db.ResourceConnectionInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.sql.DataSource;
@@ -10,15 +11,25 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-@Service
-public class DataSourceAnalysisImpl implements DataSourceAnalysis {
+/**
+ * 分析{@link DataSource},获取数据库连接信息,
+ * 以及被连接的数据库的信息.
+ *
+ * @author wuda
+ */
+@Component
+public class DataSourceAnalysis {
 
     @Autowired
     private DataSourceDetector dataSourceDetector;
     @Autowired
     private DataSourceAdaptor dataSourceAdaptor;
 
-    @Override
+    /**
+     * 获取系统中所有{@link DataSource}的基本信息.
+     *
+     * @return info
+     */
     public List<ResourceConnectionInfo> getDataSourceInfo() {
         Map<String, DataSource> dataSourceMap = dataSourceDetector.getAll();
         if (dataSourceMap == null || dataSourceMap.isEmpty()) {

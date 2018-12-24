@@ -1,4 +1,4 @@
-package com.wuda.admin.db.model;
+package com.wuda.admin.db.datasource;
 
 import java.util.Map;
 
